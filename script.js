@@ -49,3 +49,11 @@ function sendMessage() {
     // Scroll chat to the bottom
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+// Event listener for Enter key to send message
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent newline from being added
+        sendMessage();
+    }
+});
